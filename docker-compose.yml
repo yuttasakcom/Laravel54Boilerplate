@@ -9,9 +9,6 @@ services:
     ports:
       - "8080:80"
       - "8443:443"
-    volumes:
-      - ./www/src:/var/www/html
-      - ./ssl:/etc/nginx/ssl
     links:
       - php
       - mariadb:mysql
@@ -22,8 +19,6 @@ services:
     build: ./www
     container_name: lara
     image: yuttasakcom/php:7.1.8
-    volumes:
-      - ./www/src:/var/www/html
     privileged: true
     restart: always
 
